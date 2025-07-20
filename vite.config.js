@@ -5,12 +5,4 @@ import react from "@vitejs/plugin-react";
 export default defineConfig({
   plugins: [react()],
   base: "/IMDB-frontend/",
-  server: {
-    proxy: {
-      "/api": {
-        target: "https://imdb-backend-rore.onrender.com",
-        changeOrigin: true,
-      },
-    },
-  },
 });

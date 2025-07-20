@@ -1,6 +1,6 @@
 import axios from "axios";
 
-const baseUrl = "/api/login";
+const baseUrl = "https://imdb-backend-rore.onrender.com/api/login";
 
 const login = async (credentials) => {
   try {

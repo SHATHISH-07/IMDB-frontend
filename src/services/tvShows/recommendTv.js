@@ -1,6 +1,6 @@
 import axios from "axios";
 
-const baseUrl = "/api/tv/recommend";
+const baseUrl = "https://imdb-backend-rore.onrender.com/api/tv/recommend";
 
 const getRecommendTv = async (id, page = 1) => {
   if (!id) {

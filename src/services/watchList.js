@@ -1,6 +1,6 @@
 import axios from "axios";
 
-const baseUrl = "/api/watchList";
+const baseUrl = "https://imdb-backend-rore.onrender.com/api/watchList";
 
 let token = null;
 const setToken = (newToken) => {

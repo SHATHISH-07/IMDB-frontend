@@ -4,7 +4,7 @@ const getMovieCollections = async (id) => {
   if (!id) {
     throw new Error("Movie ID is required");
   }
-  const url = `/api/movie/collection/${id}`;
+  const url = `https://imdb-backend-rore.onrender.com/api/movie/collection/${id}`;
   try {
     const response = await axios.get(url);
     return response.data;

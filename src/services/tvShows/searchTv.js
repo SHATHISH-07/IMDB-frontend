@@ -5,7 +5,7 @@ const getTvById = async (id) => {
   if (!id) {
     throw new Error("Tv show ID is required");
   }
-  const url = `/api/tv/search/${id}`;
+  const url = `https://imdb-backend-rore.onrender.com/api/tv/search/${id}`;
   try {
     const response = await axios.get(url);
     return response.data;
@@ -21,7 +21,7 @@ const searchTvShows = async (query, page = 1) => {
     throw new Error("Search query is required");
   }
 
-  const Url = "/api/tv/search";
+  const Url = "https://imdb-backend-rore.onrender.com/api/tv/search";
 
   try {
     const response = await axios.get(`${Url}?query=${query}&page=${page}`);

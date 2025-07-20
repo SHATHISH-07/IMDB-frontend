@@ -1,6 +1,6 @@
 import axios from "axios";
 
-const API_BASE_URL = "/api/person";
+const API_BASE_URL = "https://imdb-backend-rore.onrender.com/api/person";
 
 // Fetch popular persons
 const fetchPopularPersons = async (page = 1) => {

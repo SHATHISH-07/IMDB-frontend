@@ -1,7 +1,7 @@
 import axios from "axios";
 
 const getTvShowImage = async (id) => {
-  const url = `/api/tv/image/${id}`;
+  const url = `https://imdb-backend-rore.onrender.com/api/tv/image/${id}`;
   try {
     const response = await axios.get(url);
     return response.data;

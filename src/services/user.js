@@ -1,6 +1,6 @@
 import axios from "axios";
 
-const baseUrl = "/api/users";
+const baseUrl = "https://imdb-backend-rore.onrender.com/api/users";
 let token = null;
 
 // Set the token for authorization

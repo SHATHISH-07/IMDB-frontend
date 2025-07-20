@@ -1,6 +1,6 @@
 import axios from "axios";
 
-const baseUrl = "/api/movie/trending";
+const baseUrl = "https://imdb-backend-rore.onrender.com/api/movie/trending";
 
 // Function to get trending movies by day
 const getTrendingMovieByDay = async (page = 1) => {

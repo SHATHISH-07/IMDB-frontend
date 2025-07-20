@@ -1,6 +1,6 @@
 import axios from "axios";
 
-const baseUrl = "/api/movie/credits";
+const baseUrl = "https://imdb-backend-rore.onrender.com/api/movie/credits";
 
 const getMovieCredits = async (id) => {
   if (!id) {

@@ -5,7 +5,7 @@ const getMovieById = async (id) => {
   if (!id) {
     throw new Error("Movie ID is required");
   }
-  const url = `/api/movie/search/${id}`;
+  const url = `https://imdb-backend-rore.onrender.com/api/movie/search/${id}`;
   try {
     const response = await axios.get(url);
     return response.data;
@@ -21,7 +21,7 @@ const searchMovies = async (query, page = 1) => {
     throw new Error("Search query is required");
   }
 
-  const Url = "/api/movie/search";
+  const Url = "https://imdb-backend-rore.onrender.com/api/movie/search";
 
   try {
     const response = await axios.get(`${Url}?query=${query}&page=${page}`);

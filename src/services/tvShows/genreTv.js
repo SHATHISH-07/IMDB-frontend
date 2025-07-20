@@ -1,6 +1,6 @@
 import axios from "axios";
 
-const baseUrl = "/api/tv/genres";
+const baseUrl = "https://imdb-backend-rore.onrender.com/api/tv/genres";
 
 const getAllGenresTv = async () => {
   try {

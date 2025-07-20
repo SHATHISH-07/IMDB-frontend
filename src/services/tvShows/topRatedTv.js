@@ -1,6 +1,6 @@
 import axios from "axios";
 
-const baseUrl = "/api/tv/top_rated";
+const baseUrl = "https://imdb-backend-rore.onrender.com/api/tv/top_rated";
 
 const getTopRatedTv = async (page = 1) => {
   try {

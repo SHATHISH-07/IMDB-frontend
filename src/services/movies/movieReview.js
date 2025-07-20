@@ -1,7 +1,7 @@
 import axios from "axios";
 
 const getMovieReview = async (id) => {
-  const url = `/api/movie/review/${id}`;
+  const url = `https://imdb-backend-rore.onrender.com/api/movie/review/${id}`;
   try {
     const response = await axios.get(url);
     return response.data;
