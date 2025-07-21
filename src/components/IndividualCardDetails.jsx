@@ -135,6 +135,11 @@ const IndividualCardDetails = ({
     handleSetMovieId(movieId, type);
   };
 
+  const scrollToId = (id) => {
+    document.getElementById(id)?.scrollIntoView({ behavior: "smooth" });
+  };
+
+
   if (loading) {
     return (
       <div className="flex justify-center items-center h-screen">
@@ -190,9 +195,9 @@ const IndividualCardDetails = ({
               <i className="fa-regular fa-clock"></i>{" "}
               {formatRuntime(
                 detailedShowCard.runtime ||
-                  (Array.isArray(detailedShowCard.episode_run_time) &&
-                    detailedShowCard.episode_run_time[0]) ||
-                  0
+                (Array.isArray(detailedShowCard.episode_run_time) &&
+                  detailedShowCard.episode_run_time[0]) ||
+                0
               )}
             </p>
             <p>{detailedShowCard.status}</p>
@@ -221,11 +226,10 @@ const IndividualCardDetails = ({
         <div
           id="poster"
           style={{
-            backgroundImage: `url(${
-              detailedShowCard.backdrop_path
-                ? `https://image.tmdb.org/t/p/original${detailedShowCard.backdrop_path}`
-                : ""
-            })`,
+            backgroundImage: `url(${detailedShowCard.backdrop_path
+              ? `https://image.tmdb.org/t/p/original${detailedShowCard.backdrop_path}`
+              : ""
+              })`,
           }}
           className="w-full lg:w-[25%] h-60 lg:h-full bg-center bg-cover rounded-r-2xl rounded-bl-2xl relative max-w-full"
         >
@@ -269,7 +273,7 @@ const IndividualCardDetails = ({
 
         {/* Image and Video Count */}
         <div className="w-full lg:w-[15%] h-40 lg:h-full flex lg:flex-col gap-2 lg:gap-1">
-          <a href="#videoScroll" className="flex-1 scroll-smooth">
+          <a onClick={() => scrollToId("videoScroll")} className="flex-1 scroll-smooth">
             <div
               id="video"
               className="flex flex-col justify-center items-center w-full h-full bg-black bg-opacity-70 text-white rounded-2xl"
@@ -278,7 +282,7 @@ const IndividualCardDetails = ({
               {videos.length} VIDEOS
             </div>
           </a>
-          <a href="#imageScroll" className="flex-1 scroll-smooth">
+          <a onClick={() => scrollToId("imageScroll")} className="flex-1 scroll-smooth">
             <div
               id="image"
               className="flex flex-col justify-center items-center w-full h-full bg-black bg-opacity-70 text-white rounded-2xl"
