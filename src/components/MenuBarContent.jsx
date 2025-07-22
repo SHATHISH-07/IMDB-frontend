@@ -35,12 +35,12 @@ const MenuBarContent = ({
     toggleMenu();
   };
 
-  const handleWatchListNavigate = () => {
-    if (!currentUser) {
-      setShowLoginPopup(true);
-    } else {
-      toggleMenu();
+  const handleNavigateToWatchList = () => {
+    if (currentUser) {
       navigate("/watchlist");
+      toggleMenu();
+    } else {
+      setShowLoginPopup(true);
     }
   };
 
@@ -52,11 +52,10 @@ const MenuBarContent = ({
     <>
       <div>
         <div
-          className={`fixed inset-0 bg-white bg-opacity-90 dark:bg-opacity-90 flex items-center justify-center z-40 text-black dark:bg-black dark:text-white pl-3 md:pl-0 transition-all duration-500 ease-in-out transform ${
-            isMenuOpen
-              ? "translate-x-0 opacity-100"
-              : "-translate-x-full opacity-0 pointer-events-none"
-          }`}
+          className={`fixed inset-0 bg-white bg-opacity-90 dark:bg-opacity-90 flex items-center justify-center z-40 text-black dark:bg-black dark:text-white pl-3 md:pl-0 transition-all duration-500 ease-in-out transform ${isMenuOpen
+            ? "translate-x-0 opacity-100"
+            : "-translate-x-full opacity-0 pointer-events-none"
+            }`}
         >
           <button
             onClick={toggleMenu}
@@ -226,9 +225,9 @@ const MenuBarContent = ({
                   On Air
                 </li>
 
-                <div onClick={handleWatchListNavigate} className="pt-10">
+                <div className="pt-10">
                   <li className="hover:text-blue-500 text-4xl transition">
-                    <a href="#">
+                    <a onClick={handleNavigateToWatchList}>
                       <i className="fa-solid fa-bookmark"></i> WatchList
                     </a>
                   </li>
