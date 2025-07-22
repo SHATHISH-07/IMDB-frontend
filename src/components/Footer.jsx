@@ -1,82 +1,94 @@
-import React from "react";
 import { useNavigate } from "react-router-dom";
 
-const Footer = ({ currentUser }) => {
+const Footer = () => {
   const navigate = useNavigate();
 
+  const handleNavigateHome = () => {
+    scrollTo(0, 0);
+    navigate("/");
+  };
+
   return (
-    <footer className="bg-gray-800 dark:bg-black text-white py-6 ">
-      <div className=" mx-auto md:px-6">
-        <div
-          onClick={() => window.scrollTo({ top: 0, behavior: "smooth" })}
-          className="text-center pb-5 hover:text-blue-400 cursor-pointer"
-        >
-          Back To Top
-        </div>
-        <div className="flex flex-col justify-center items-center sm:justify-center  sm:flex-row  sm:space-x-10  mb-6">
-          <a
-            href="/about"
-            className="text-lg hover:text-blue-400 px-10 md:px-0"
-          >
-            About
-          </a>
-          <a href="/contact" className="text-lg hover:text-blue-400">
-            Contact
-          </a>
-          <a href="/privacy-policy" className="text-lg hover:text-blue-400">
-            Privacy Policy
-          </a>
-          <a href="/terms" className="text-lg hover:text-blue-400">
-            Terms of Service
-          </a>
-        </div>
-        <div
-          onClick={() => {
-            if (!currentUser) {
-              navigate("/login");
-            }
-          }}
-          className="text-lg hover:text-blue-400 cursor-pointer flex justify-center  pb-5"
-        >
-          {currentUser ? (
-            <>
-              <i className="fa-solid fa-user p-1"></i> {currentUser.name}
-            </>
-          ) : (
-            "Sign In"
-          )}
+    <footer className="bg-white border-t-1 dark:bg-[#121212] text-gray-800 dark:text-gray-200 py-6 md:py-10">
+      <div className="max-w-6xl mx-auto px-4 flex flex-col md:flex-row justify-between items-center space-y-4 md:space-y-0">
+        {/* Branding */}
+        <div className="text-center md:text-left mb-5 md:mb-0">
+          <h1 className="text-lg font-semibold">MovieWorld</h1>
+          <p className="text-center text-sm text-gray-500 mt-4">
+            Powered by <a href="https://www.themoviedb.org/" target="_blank" rel="noopener noreferrer" className="hover:underline hover:text-blue-500">themoviedb.org (TMDB)</a>
+          </p>
+
         </div>
 
-        <div className="flex justify-center px-10 md:px-0 space-x-6 mb-6">
-          <a
-            href="https://facebook.com"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="text-lg hover:text-blue-400"
-          >
-            <i className="fa-brands fa-facebook"></i>
-          </a>
-          <a
-            href="https://twitter.com"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="text-lg hover:text-blue-400"
-          >
-            <i className="fa-brands fa-twitter"></i>
-          </a>
-          <a
-            href="https://instagram.com"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="text-lg hover:text-blue-400"
-          >
-            <i className="fa-brands fa-instagram"></i>
-          </a>
+        <div className="flex flex-col space-y-5 items-center">
+          {/* Navigation */}
+          <div className="flex flex-row space-x-3 md:space-x-4">
+            <p
+              onClick={handleNavigateHome}
+              className="cursor-pointer hover:text-gray-400 dark:hover:text-gray-600"
+            >
+              Home
+            </p>
+            <a
+              href="https://shathish2004.github.io/Shathish-Portfolio/#/about"
+              target="_blank"
+              className="hover:text-gray-400 dark:hover:text-gray-600"
+            >
+              About
+            </a>
+            <a
+              href="https://shathish2004.github.io/Shathish-Portfolio/#/contact"
+              target="_blank"
+              className="hover:text-gray-400 dark:hover:text-gray-600"
+            >
+              Contact
+            </a>
+          </div>
+
+          {/* Social Links */}
+          <div className="flex space-x-6">
+            <a
+              href="https://github.com/SHATHISH-07"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="hover:text-gray-400 dark:hover:text-gray-600"
+              aria-label="GitHub"
+            >
+              GitHub
+            </a>
+            <a
+              href="https://www.linkedin.com/in/shathish-kumaran-05a298325"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="hover:text-blue-600 dark:hover:text-blue-400"
+              aria-label="LinkedIn"
+            >
+              Linkedin
+            </a>
+            <a
+              href="https://shathish2004.github.io/Shathish-Portfolio"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="hover:text-green-600 dark:hover:text-green-400"
+              aria-label="Portfolio"
+            >
+              Portfolio
+            </a>
+          </div>
         </div>
-        <div className="text-center text-sm text-gray-400">
-          <p>
-            &copy; {new Date().getFullYear()} IMDb Clone. All rights reserved.
-          </p>
+
+        {/* Copyright */}
+        <div className="text-sm text-center md:text-right text-gray-500 dark:text-gray-400">
+          &copy; {new Date().getFullYear()}{" "}
+          <a
+            href="https://www.linkedin.com/in/shathish-kumaran-05a298325"
+            className="hover:underline"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            Shathish Kumaran
+          </a>
+          . All rights reserved.
         </div>
       </div>
     </footer>
