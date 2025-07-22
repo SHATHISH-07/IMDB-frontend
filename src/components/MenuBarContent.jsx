@@ -252,6 +252,29 @@ const MenuBarContent = ({
                 </li>
               </ul>
             </div>
+
+            <div className=" flex flex-col menu-section space-y-10">
+              <a
+                href="https://shathish2004.github.io/Shathish-Portfolio/"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="text-4xl font-semibold cursor-pointer hover:text-blue-500"
+              >
+                About Me
+              </a>
+
+              <a
+                href="https://shathish2004.github.io/Shathish-Portfolio/#/contact"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="text-4xl font-semibold cursor-pointer hover:text-blue-500"
+              >
+                Feedback
+              </a>
+            </div>
+
+
+
           </div>
         </div>
       </div>

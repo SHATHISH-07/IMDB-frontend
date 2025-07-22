@@ -1,12 +1,11 @@
-import { useNavigate } from "react-router-dom";
 
 const Footer = () => {
-  const navigate = useNavigate();
 
-  const handleNavigateHome = () => {
-    scrollTo(0, 0);
-    navigate("/");
+  const handleScrollToTop = () => {
+    window.scrollTo({ top: 0, behavior: "smooth" });
   };
+
+
 
   return (
     <footer className="bg-white border-t-1 dark:bg-[#121212] text-gray-800 dark:text-gray-200 py-6 md:py-10">
@@ -23,12 +22,15 @@ const Footer = () => {
         <div className="flex flex-col space-y-5 items-center">
           {/* Navigation */}
           <div className="flex flex-row space-x-3 md:space-x-4">
+
             <p
-              onClick={handleNavigateHome}
-              className="cursor-pointer hover:text-gray-400 dark:hover:text-gray-600"
+              onClick={() => handleScrollToTop()}
+              className="hover:text-gray-400 cursor-pointer dark:hover:text-gray-600"
             >
-              Home
+              Scroll Up
             </p>
+
+
             <a
               href="https://shathish2004.github.io/Shathish-Portfolio/#/about"
               target="_blank"
@@ -36,12 +38,13 @@ const Footer = () => {
             >
               About
             </a>
+
             <a
               href="https://shathish2004.github.io/Shathish-Portfolio/#/contact"
               target="_blank"
-              className="hover:text-gray-400 dark:hover:text-gray-600"
+              className="cursor-pointer hover:text-gray-400 dark:hover:text-gray-600"
             >
-              Contact
+              FeedBack
             </a>
           </div>
 
