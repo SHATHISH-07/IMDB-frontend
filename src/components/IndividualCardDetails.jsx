@@ -51,6 +51,8 @@ const IndividualCardDetails = ({
     container.scrollBy({ left: scrollAmount, behavior: "smooth" });
   };
 
+
+
   useEffect(() => {
     // Check if all necessary data is available to stop the loading state
     if (
@@ -66,10 +68,20 @@ const IndividualCardDetails = ({
   }, [detailedShowCard, videos, credits, genres, images, recommendations]);
 
   useEffect(() => {
-    const trailerData = videos?.find(
-      (video) => video.type === "Trailer" && video.site === "YouTube"
-    );
-    setTrailer(trailerData);
+    // Clear trailer immediately on new mount or when videos change
+    setTrailer(null);
+
+    const timeout = setTimeout(() => {
+      const trailerData = videos?.find(
+        (video) => video.type === "Trailer" && video.site === "YouTube"
+      );
+      setTrailer(trailerData);
+    }, 1000); // 2 seconds delay
+
+    return () => {
+      // Cleanup the timeout when component unmounts or before re-running effect
+      clearTimeout(timeout);
+    };
   }, [videos]);
 
   useEffect(() => {
@@ -139,14 +151,15 @@ const IndividualCardDetails = ({
     document.getElementById(id)?.scrollIntoView({ behavior: "smooth" });
   };
 
-
-  if (loading) {
+  if (loading
+  ) {
     return (
-      <div className="flex justify-center items-center h-screen">
-        <div className="spinner-border animate-spin border-4 border-t-4 border-blue-500 rounded-full w-16 h-16"></div>
+      <div className="flex justify-center items-center min-h-screen">
+        <ClipLoader color="#36d7b7" size={50} />
       </div>
     );
   }
+
 
   return (
     <div
@@ -254,9 +267,9 @@ const IndividualCardDetails = ({
               <ClipLoader color="#ffffff" loading={isVideoLoading} size={50} />
             </div>
           )}
-          {videos[0] && videos.length > 0 ? (
+          {videos?.length > 0 ? (
             <ReactPlayer
-              url={`https://www.youtube-nocookie.com/embed/${videos[0]?.key}`}
+              url={`https://www.youtube-nocookie.com/embed/${trailer?.key}`}
               playing={true}
               controls={true}
               loop={true}
@@ -457,7 +470,7 @@ const IndividualCardDetails = ({
           {reviews.length} Reviews
         </p>
 
-        {reviews.map((review) => (
+        {reviews.slice(0, 3).map((review) => (
           <div
             className="flex flex-col md:flex-row m-6 p-6 rounded-lg dark:bg-gray-900 dark:bg-opacity-70 shadow-lg space-y-4 md:space-y-0 md:space-x-6 dark:text-white"
             key={review.id}
@@ -485,13 +498,14 @@ const IndividualCardDetails = ({
             </div>
 
             {/* Review Content */}
-            <div className="flex  flex-col md:flex-row md:items-center gap-5 w-full ">
+            <div className="flex flex-col md:flex-row md:items-center gap-5 w-full">
               <div className="mt-3 md:mt-0 text-gray-800 dark:text-gray-300">
                 {review.content}
               </div>
             </div>
           </div>
         ))}
+
       </div>
 
       <RecommendCard

@@ -83,6 +83,10 @@ const RecommendCard = ({
     onWatchTrailer(movie, storedType);
   };
 
+  if (!movieData || movieData.length === 0) {
+    return null;
+  }
+
   return (
     <div className="space-y-2">
       <h2 className="text-3xl font-bold text-gray-900 dark:text-white mt-20 ml-2">
@@ -182,9 +186,8 @@ const RecommendCard = ({
             <div
               className="w-[150px] sm:w-[200px] h-[225px] sm:h-[300px] bg-cover bg-center rounded-lg"
               style={{
-                backgroundImage: `url(https://image.tmdb.org/t/p/w500${
-                  selectedMovie.poster_path || ""
-                })`,
+                backgroundImage: `url(https://image.tmdb.org/t/p/w500${selectedMovie.poster_path || ""
+                  })`,
               }}
             ></div>
 
