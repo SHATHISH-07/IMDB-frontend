@@ -12,7 +12,7 @@ const SignUpSection = ({ handleSignUp }) => {
   };
 
   return (
-    <div className="flex justify-center items-center min-h-screen bg-gray-300 dark:bg-gray-800 px-4 sm:px-6 lg:px-8 ">
+    <div className="flex mt-[60px] justify-center items-center min-h-screen bg-gray-300 dark:bg-gray-800 px-4 sm:px-6 lg:px-8 ">
       <div className="bg-gray-900 m-4 dark:bg-gray-900 text-gray-100 dark:text-gray-300 p-6 sm:p-8 rounded-lg shadow-lg w-full max-w-sm sm:max-w-md lg:max-w-lg mx-auto">
         <h2 className="text-2xl sm:text-3xl font-bold text-blue-400 mb-6 text-center">
           Sign Up
