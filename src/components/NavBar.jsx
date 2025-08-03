@@ -105,11 +105,10 @@ const NavBar = ({
     <>
       {/* Search Results */}
       <div
-        className={`search-results cursor-pointer  absolute top-16 left-0 right-0 z-20 bg-white dark:text-white dark:bg-black rounded-md shadow-md md:w-2/3 w-11/12 h-[71%] md:h-[87%] mx-auto mt-11 md:mt-3 overflow-y-scroll scrollbar-custom ${
-          searchInput.trim() === "" || searchResult.length === 0
-            ? "hidden"
-            : "block"
-        }`}
+        className={`search-results fixed cursor-pointer  top-16 left-0 right-0 z-20 bg-white dark:text-white dark:bg-black rounded-md shadow-md md:w-2/3 w-11/12 h-[71%] md:h-[87%] mx-auto mt-11 md:mt-3 overflow-y-scroll scrollbar-custom ${searchInput.trim() === "" || searchResult.length === 0
+          ? "hidden"
+          : "block"
+          }`}
       >
         {searchResult.length > 0 ? (
           searchResult.map((item) => {
@@ -160,7 +159,7 @@ const NavBar = ({
       </div>
 
       {/* Navigation Bar */}
-      <nav className="navbar  p-2 flex items-center justify-between border-gray-500 border-b-2 bg-white text-black dark:bg-customBlack dark:text-white">
+      <nav className="navbar  fixed top-0 left-0 right-0 z-50   p-2 flex items-center justify-between border-gray-500 border-b-2 bg-white text-black dark:bg-customBlack dark:text-white">
         <div>
           <button
             onClick={toggleMenu}

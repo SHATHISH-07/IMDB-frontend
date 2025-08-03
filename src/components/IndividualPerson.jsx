@@ -58,7 +58,7 @@ const IndividualPerson = ({ personDetails }) => {
   };
 
   return (
-    <div className="bg-white dark:bg-gray-900 dark:text-white">
+    <div className="bg-white mt-[70px] dark:bg-gray-900 dark:text-white">
       <div
         key={storedPersonDetails.id}
         className="flex flex-wrap justify-between "

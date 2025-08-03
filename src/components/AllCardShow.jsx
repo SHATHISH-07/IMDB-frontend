@@ -90,7 +90,7 @@ const AllCardShow = ({
   };
 
   return (
-    <div className="bg-gradient-to-r from-gray-400 via-gray-100 to-gray-400 dark:from-gray-900 dark:via-gray-700 dark:to-gray-900">
+    <div className="mt-[70px] bg-gradient-to-r from-gray-400 via-gray-100 to-gray-400 dark:from-gray-900 dark:via-gray-700 dark:to-gray-900">
       {/* Random Movie Section */}
       <div className="h-[80vh] sm:h-[77vh] relative bg-cover bg-center flex justify-center items-center overflow-hidden">
         {randomMovie && (
@@ -180,8 +180,8 @@ const AllCardShow = ({
           onClick={handlePreviousPage}
           disabled={page === 1}
           className={`px-4 py-2 rounded ${page === 1
-              ? "bg-black bg-opacity-50 text-white hover:bg-opacity-75 border-2 border-white rounded-xl cursor-not-allowed"
-              : "bg-black bg-opacity-50 text-white hover:bg-opacity-75 dark:hover:bg-opacity-30  border-2 border-white rounded-xl"
+            ? "bg-black bg-opacity-50 text-white hover:bg-opacity-75 border-2 border-white rounded-xl cursor-not-allowed"
+            : "bg-black bg-opacity-50 text-white hover:bg-opacity-75 dark:hover:bg-opacity-30  border-2 border-white rounded-xl"
             }`}
         >
           <i className="fa-solid fa-chevron-left p-5 text-3xl"></i>
@@ -197,8 +197,8 @@ const AllCardShow = ({
           onClick={handleNextPage}
           disabled={movies.length === 0}
           className={`px-4 py-2 rounded ${movies.length === 0
-              ? "bg-black bg-opacity-50 text-white hover:bg-opacity-75 border-2 border-white rounded-xl cursor-not-allowed"
-              : "bg-black bg-opacity-50 dark:hover:bg-opacity-30 text-white hover:bg-opacity-75 border-2 border-white rounded-xl"
+            ? "bg-black bg-opacity-50 text-white hover:bg-opacity-75 border-2 border-white rounded-xl cursor-not-allowed"
+            : "bg-black bg-opacity-50 dark:hover:bg-opacity-30 text-white hover:bg-opacity-75 border-2 border-white rounded-xl"
             }`}
         >
           <i className="fa-solid fa-chevron-right p-5 text-3xl"></i>

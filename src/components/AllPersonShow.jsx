@@ -20,6 +20,8 @@ const AllPersonShow = ({
 
   const navigate = useNavigate();
 
+  // console.log(persons)
+
   useEffect(() => {
     window.scrollTo(0, 0);
   }, []);
@@ -68,7 +70,7 @@ const AllPersonShow = ({
   };
 
   return (
-    <div className="p-5 bg-gradient-to-r from-gray-400 via-gray-100 to-gray-400 dark:from-gray-900 dark:via-gray-700 dark:to-gray-900 dark:text-white">
+    <div className="p-5 mt-[70px] bg-gradient-to-r from-gray-400 via-gray-100 to-gray-400 dark:from-gray-900 dark:via-gray-700 dark:to-gray-900 dark:text-white">
       <h1 className="text-4xl font-bold text-center mb-5">
         <i className="fa-solid fa-users"></i> {title}
       </h1>
@@ -154,11 +156,10 @@ const AllPersonShow = ({
         <button
           onClick={handlePreviousPage}
           disabled={page === 1}
-          className={`px-4 py-2 rounded ${
-            page === 1
-              ? "bg-black bg-opacity-50 text-white hover:bg-opacity-75 border-2 border-white rounded-xl cursor-not-allowed"
-              : "bg-black bg-opacity-50 text-white hover:bg-opacity-75 dark:hover:bg-opacity-30  border-2 border-white rounded-xl"
-          }`}
+          className={`px-4 py-2 rounded ${page === 1
+            ? "bg-black bg-opacity-50 text-white hover:bg-opacity-75 border-2 border-white rounded-xl cursor-not-allowed"
+            : "bg-black bg-opacity-50 text-white hover:bg-opacity-75 dark:hover:bg-opacity-30  border-2 border-white rounded-xl"
+            }`}
         >
           <i className="fa-solid fa-chevron-left p-5 text-3xl"></i>
         </button>
@@ -172,11 +173,10 @@ const AllPersonShow = ({
         <button
           onClick={handleNextPage}
           disabled={persons.length === 0}
-          className={`px-4 py-2 rounded ${
-            persons.length === 0
-              ? "bg-black bg-opacity-50 text-white hover:bg-opacity-75 border-2 border-white rounded-xl cursor-not-allowed"
-              : "bg-black bg-opacity-50 dark:hover:bg-opacity-30 text-white hover:bg-opacity-75 border-2 border-white rounded-xl"
-          }`}
+          className={`px-4 py-2 rounded ${persons.length === 0
+            ? "bg-black bg-opacity-50 text-white hover:bg-opacity-75 border-2 border-white rounded-xl cursor-not-allowed"
+            : "bg-black bg-opacity-50 dark:hover:bg-opacity-30 text-white hover:bg-opacity-75 border-2 border-white rounded-xl"
+            }`}
         >
           <i className="fa-solid fa-chevron-right p-5 text-3xl"></i>
         </button>
@@ -204,9 +204,8 @@ const AllPersonShow = ({
             <div
               className="w-[150px] sm:w-[300px] h-[225px] sm:h-[400px] bg-cover bg-center rounded-lg shadow-lg"
               style={{
-                backgroundImage: `url(https://image.tmdb.org/t/p/w500${
-                  selectedPerson.profile_path || ""
-                })`,
+                backgroundImage: `url(https://image.tmdb.org/t/p/w500${selectedPerson.profile_path || ""
+                  })`,
               }}
             ></div>
 
@@ -241,9 +240,8 @@ const AllPersonShow = ({
                       key={item.id}
                       className="w-[150px] h-[225px] bg-cover bg-center rounded-lg shadow-lg flex-shrink-0"
                       style={{
-                        backgroundImage: `url(https://image.tmdb.org/t/p/w500${
-                          item.poster_path || ""
-                        })`,
+                        backgroundImage: `url(https://image.tmdb.org/t/p/w500${item.poster_path || ""
+                          })`,
                       }}
                     >
                       <div className="bg-black bg-opacity-60 text-white p-2 rounded-b-lg">
