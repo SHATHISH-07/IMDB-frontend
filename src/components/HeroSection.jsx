@@ -41,7 +41,7 @@ const HeroSection = ({
   };
 
   return (
-    <div className="mt-[70px]">
+    <div className="mt-[100px] md:mt-[70px]">
       <div className="mx-auto py-4">
         {movie ? (
           <div className="flex flex-col md:flex-row gap-6">

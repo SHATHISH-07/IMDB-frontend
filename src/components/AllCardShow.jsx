@@ -90,7 +90,7 @@ const AllCardShow = ({
   };
 
   return (
-    <div className="mt-[70px] bg-gradient-to-r from-gray-400 via-gray-100 to-gray-400 dark:from-gray-900 dark:via-gray-700 dark:to-gray-900">
+    <div className="mt-[100px] md:mt-[70px] bg-gradient-to-r from-gray-400 via-gray-100 to-gray-400 dark:from-gray-900 dark:via-gray-700 dark:to-gray-900">
       {/* Random Movie Section */}
       <div className="h-[80vh] sm:h-[77vh] relative bg-cover bg-center flex justify-center items-center overflow-hidden">
         {randomMovie && (

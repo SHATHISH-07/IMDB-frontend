@@ -70,7 +70,7 @@ const AllPersonShow = ({
   };
 
   return (
-    <div className="p-5 mt-[70px] bg-gradient-to-r from-gray-400 via-gray-100 to-gray-400 dark:from-gray-900 dark:via-gray-700 dark:to-gray-900 dark:text-white">
+    <div className="p-5 mt-[100px] md:mt-[70px] bg-gradient-to-r from-gray-400 via-gray-100 to-gray-400 dark:from-gray-900 dark:via-gray-700 dark:to-gray-900 dark:text-white">
       <h1 className="text-4xl font-bold text-center mb-5">
         <i className="fa-solid fa-users"></i> {title}
       </h1>

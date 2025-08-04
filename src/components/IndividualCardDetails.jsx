@@ -163,7 +163,7 @@ const IndividualCardDetails = ({
 
   return (
     <div
-      className="bg-gradient-to-r mt-[70px] from-gray-300 via-gray-100 to-gray-300 dark:from-gray-900 dark:via-gray-700 dark:to-gray-900"
+      className="bg-gradient-to-r mt-[100px] md:mt-[70px] from-gray-300 via-gray-100 to-gray-300 dark:from-gray-900 dark:via-gray-700 dark:to-gray-900"
       id="movieDetails"
     >
       {/* Login Popup */}

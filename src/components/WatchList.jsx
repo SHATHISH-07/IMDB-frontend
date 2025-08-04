@@ -19,7 +19,7 @@ const WatchList = ({ watchlist, onRemove, handleSetMovieId }) => {
   }, []);
 
   return (
-    <div className="min-h-screen mt-[70px] bg-white dark:bg-gray-900 text-gray-900 dark:text-white">
+    <div className="min-h-screen mt-[100px] md:mt-[70px] bg-white dark:bg-gray-900 text-gray-900 dark:text-white">
       {/* Search Bar */}
       <div className="flex flex-col justify-center items-center p-4">
         <div className="text-3xl font-bold m-5">
